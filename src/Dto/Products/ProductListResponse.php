@@ -55,8 +55,6 @@ class ProductListResponse extends OzonApiResponseDto
             $dto->items[] = ItemDTO::fromArray($item);
         }
 
-        $dto->items = $items;
-
         return $dto;
     }
 

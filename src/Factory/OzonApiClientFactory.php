@@ -10,6 +10,7 @@ use Psr\Http\Client\ClientInterface;
 
 use Escorp\OzonApiClient\Api\Common\RolesApi;
 use Escorp\OzonApiClient\Api\Products\ProductApi;
+use Escorp\OzonApiClient\Api\Warehouses\WarehouseApi;
 
 use Escorp\OzonApiClient\Auth\StaticTokenProvider;
 use Escorp\OzonApiClient\Http\GuzzleHttpClient;
@@ -59,12 +60,14 @@ final class OzonApiClientFactory
         //Domain API
         $rolesApi = new RolesApi($guzzleHttpClient, $tokenProvider);
         $productApi = new ProductApi($guzzleHttpClient, $tokenProvider);
+        $warehouseApi = new WarehouseApi($guzzleHttpClient, $tokenProvider);
 
 
         //Root client
         return new OzonApiClient(
                     $rolesApi,
-                    $productApi
+                    $productApi,
+                    $warehouseApi
                 );
     }
 }

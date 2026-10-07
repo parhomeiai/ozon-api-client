@@ -42,7 +42,7 @@ class ProductApi extends AbstractOzonApi
      * Возвращает все товары
      *
      * @param array $filter
-     * @return array
+     * @return array | \Escorp\OzonApiClient\Dto\Products\ItemDTO[]
      */
     public function allProducts(array $filter = ['visibility' => 'ALL']): array
     {
